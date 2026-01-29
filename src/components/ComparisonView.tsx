@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react';
-import { VideoData, REGION_CODES } from '../types';
-import { fetchTopVideos } from '../services/api';
-import RegionSelector from './RegionSelector';
-import VideoCard from './VideoCard';
-import './ComparisonView.css';
+import { useState, useEffect } from "react";
+import type { VideoData } from "../types";
+import { REGION_CODES } from "../types";
+import { fetchTopVideos } from "../services/api";
+import RegionSelector from "./RegionSelector";
+import VideoCard from "./VideoCard";
+import "./ComparisonView.css";
 
 export default function ComparisonView() {
-  const [region1, setRegion1] = useState('US');
-  const [region2, setRegion2] = useState('GB');
+  const [region1, setRegion1] = useState("US");
+  const [region2, setRegion2] = useState("GB");
   const [videos1, setVideos1] = useState<VideoData[]>([]);
   const [videos2, setVideos2] = useState<VideoData[]>([]);
   const [loading1, setLoading1] = useState(false);
@@ -39,7 +40,7 @@ export default function ComparisonView() {
       const response = await fetchTopVideos(regionCode);
       setVideos(response.videos);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to load videos');
+      setError(err instanceof Error ? err.message : "Failed to load videos");
     } finally {
       setLoading(false);
     }
@@ -51,9 +52,10 @@ export default function ComparisonView() {
     videos: VideoData[],
     loading: boolean,
     error: string | null,
-    label: string
+    label: string,
   ) => {
-    const regionName = REGION_CODES.find((r) => r.code === regionCode)?.name || regionCode;
+    const regionName =
+      REGION_CODES.find((r) => r.code === regionCode)?.name || regionCode;
 
     return (
       <div className="comparison-panel">
@@ -99,8 +101,8 @@ export default function ComparisonView() {
 
   return (
     <div className="comparison-view">
-      {renderPanel(region1, setRegion1, videos1, loading1, error1, 'Region 1')}
-      {renderPanel(region2, setRegion2, videos2, loading2, error2, 'Region 2')}
+      {renderPanel(region1, setRegion1, videos1, loading1, error1, "Region 1")}
+      {renderPanel(region2, setRegion2, videos2, loading2, error2, "Region 2")}
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import { RegionCode } from '../types';
-import './RegionSelector.css';
+import type { RegionCode } from "../types";
+import "./RegionSelector.css";
 
 interface RegionSelectorProps {
   selectedRegion: string;

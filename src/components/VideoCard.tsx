@@ -1,5 +1,5 @@
-import { VideoData } from '../types';
-import './VideoCard.css';
+import type { VideoData } from "../types";
+import "./VideoCard.css";
 
 interface VideoCardProps {
   video: VideoData;
@@ -23,10 +23,10 @@ export default function VideoCard({ video, rank }: VideoCardProps) {
 
   const formatDate = (dateString: string): string => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
     });
   };
 
@@ -39,11 +39,7 @@ export default function VideoCard({ video, rank }: VideoCardProps) {
         rel="noopener noreferrer"
         className="thumbnail-link"
       >
-        <img
-          src={video.thumbnailUrl}
-          alt={video.title}
-          className="thumbnail"
-        />
+        <img src={video.thumbnailUrl} alt={video.title} className="thumbnail" />
         <div className="play-overlay">
           <svg
             width="48"
@@ -60,7 +56,9 @@ export default function VideoCard({ video, rank }: VideoCardProps) {
         <h3 className="video-title">{video.title}</h3>
         <p className="channel-name">{video.channelTitle}</p>
         <div className="video-stats">
-          <span className="views">{formatViewCount(video.viewCount)} views</span>
+          <span className="views">
+            {formatViewCount(video.viewCount)} views
+          </span>
           <span className="separator">•</span>
           <span className="date">{formatDate(video.publishedAt)}</span>
         </div>
