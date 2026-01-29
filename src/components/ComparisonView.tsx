@@ -7,8 +7,8 @@ import VideoCard from "./VideoCard";
 import "./ComparisonView.css";
 
 export default function ComparisonView() {
-  const [region1, setRegion1] = useState("US");
-  const [region2, setRegion2] = useState("GB");
+  const [region1, setRegion1] = useState("UG");
+  const [region2, setRegion2] = useState("KE");
   const [videos1, setVideos1] = useState<VideoData[]>([]);
   const [videos2, setVideos2] = useState<VideoData[]>([]);
   const [loading1, setLoading1] = useState(false);
