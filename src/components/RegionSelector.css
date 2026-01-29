@@ -1,0 +1,44 @@
+.region-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.region-selector label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.region-dropdown {
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.region-dropdown:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.region-dropdown:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(138, 180, 248, 0.5);
+  box-shadow: 0 0 0 3px rgba(138, 180, 248, 0.1);
+}
+
+.region-dropdown option {
+  background: #1a1a2e;
+  color: #ffffff;
+  padding: 0.5rem;
+}
