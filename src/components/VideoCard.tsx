@@ -33,34 +33,42 @@ export default function VideoCard({ video, rank }: VideoCardProps) {
   return (
     <div className="video-card">
       <div className="rank-badge">{rank}</div>
-      <a
-        href={video.videoUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="thumbnail-link"
-      >
-        <img src={video.thumbnailUrl} alt={video.title} className="thumbnail" />
-        <div className="play-overlay">
-          <svg
-            width="48"
-            height="48"
-            viewBox="0 0 24 24"
-            fill="white"
-            xmlns="http://www.w3.org/2000/svg"
+      <div style={{ display: "flex" }}>
+        <div>
+          <a
+            href={video.videoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="thumbnail-link"
           >
-            <path d="M8 5v14l11-7z" />
-          </svg>
+            <img
+              src={video.thumbnailUrl}
+              alt={video.title}
+              className="thumbnail"
+            />
+            <div className="play-overlay">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </a>
         </div>
-      </a>
-      <div className="video-info">
-        <h3 className="video-title">{video.title}</h3>
-        <p className="channel-name">{video.channelTitle}</p>
-        <div className="video-stats">
-          <span className="views">
-            {formatViewCount(video.viewCount)} views
-          </span>
-          <span className="separator">•</span>
-          <span className="date">{formatDate(video.publishedAt)}</span>
+        <div className="video-info">
+          <h3 className="video-title">{video.title}</h3>
+          <p className="channel-name">{video.channelTitle}</p>
+          <div className="video-stats">
+            <span className="views">
+              {formatViewCount(video.viewCount)} views
+            </span>
+            <span className="separator">•</span>
+            <span className="date">{formatDate(video.publishedAt)}</span>
+          </div>
         </div>
       </div>
     </div>

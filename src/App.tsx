@@ -15,13 +15,19 @@ function App() {
       </main>
       <footer
         style={{
+          position: "sticky",
+          bottom: 0,
+          left: 0,
+          right: 0,
           display: "flex",
           flex: 1,
           justifyContent: "center",
           alignItems: "center",
           paddingTop: "1rem",
           paddingBottom: "1rem",
-          background: "rgba(255, 255, 255, 0.03)",
+          background: "#8DD815",
+          color: "black",
+          textDecoration: "none",
         }}
       >
         <p>
@@ -29,6 +35,11 @@ function App() {
           <a
             href="https://gravatar.com/miracletimothy?utm_source=hovercard"
             target="_blank"
+            style={{
+              textDecoration: "none",
+              color: "black",
+              fontWeight: "900",
+            }}
           >
             Miracle Timothy
           </a>
